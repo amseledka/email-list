@@ -15,4 +15,3 @@ group :test, :development do
   gem 'rspec-rails', '~> 2.8.0'
   gem 'thin'
 end
-
