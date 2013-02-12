@@ -13,3 +13,12 @@ development:
 test:
   <<: *defaults
   database: email_lists_test
+
+production:
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  username: emaillists
+  password: yigBThOW7l
+  encoding: utf8
+  host: 172.17.17.11
