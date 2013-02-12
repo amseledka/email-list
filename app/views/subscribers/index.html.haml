@@ -1,0 +1,23 @@
+%ul
+  - @subscribers.each do |subscriber|
+    %li
+      emial:
+      = subscriber.email
+    %li
+      Added
+      = subscriber.added
+    %li
+      First name
+      = subscriber.first_name
+    %li
+      Last name
+      = subscriber.last_name
+    %li
+      IP
+      = subscriber.ip
+    %li
+      Lead date
+      = subscriber.lead_date
+    %li
+      Url
+      = subscriber.url

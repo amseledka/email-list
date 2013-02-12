@@ -3,7 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'mysql2'
 gem 'jquery-rails'
-gem 'nokogiri'
+gem 'haml'
+gem 'haml-rails'
+
+gem 'capybara'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
