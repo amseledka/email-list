@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
+gem 'csv_shaper'
 
 gem 'capybara'
 

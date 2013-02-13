@@ -7,7 +7,7 @@ feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
     Capybara.app_host = 'http://beverlymails.com/news/admin/index.php'
-    Capybara.default_wait_time = 500
+    Capybara.default_wait_time = 600
   end
 
   scenario 'Upload csv' do
@@ -25,8 +25,9 @@ feature 'Subscribers' do
       click_on 'Next >>'
     end
 
+    check 'overwrite'
     check 'headers'
-    attach_file 'importfile', File.expand_path('public/lists/emails.csv')
+    attach_file 'importfile', File.expand_path('public/lists/email_list.csv')
 
     within '.PanelPlain' do
       click_on "Next »"
