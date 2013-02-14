@@ -9,6 +9,7 @@ gem 'csv_shaper'
 
 gem 'headless'
 gem 'capybara'
+gem 'rspec-rails', '~> 2.8.0'
 
 gem 'unicorn'
 gem 'capistrano-helpers'
@@ -20,7 +21,6 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.8.0'
   gem 'thin'
 end
 
