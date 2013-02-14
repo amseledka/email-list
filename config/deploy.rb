@@ -1,9 +1,9 @@
 require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
-
 require 'capistrano-helpers/bundler'
-
 require 'rvm/capistrano'
+require "whenever/capistrano"
+
 # RVM
 set :using_rvm,        true
 set :rvm_ruby_string,  "1.9.3-p194@email_lists"
@@ -22,6 +22,10 @@ set :deploy_via,       :remote_cache
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 set :use_sudo, false
+
+set :whenever_command, "bundle exec whenever"
+set :whenever_environment, defer { stage }
+set :whenever_identifier, defer { "#{application}_#{stage}" }
 
 namespace :deploy do
 
@@ -45,7 +49,7 @@ namespace :deploy do
   task :symlink_configs, :role => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
     run "ln -nfs #{shared_path}/config/unicorn.rb #{latest_release}/config/unicorn.rb"
-    run "ln -nfs #{shared_path}/public/lists #{latest_release}/public/lists"
+    run "ln -nfs #{shared_path}/db/lists #{latest_release}/db/lists"
   end
 end
 

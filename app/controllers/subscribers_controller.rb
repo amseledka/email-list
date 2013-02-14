@@ -5,6 +5,10 @@ class SubscribersController < ApplicationController
 
   def url_parser
     @params = params.slice :email, :first_name, :ip, :last_name, :lead_date, :url
-    Subscriber.create @params
+    if Subscriber.create @params
+      return head :ok
+    else
+      return head :bad_request
+    end
   end
 end

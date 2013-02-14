@@ -18,12 +18,12 @@ class Subscriber < ActiveRecord::Base
       end
     end
 
-    file = "public/lists/email_list.csv"
+    file = "db/lists/email_list.csv"
     File.open(file, "w") { |file| file.write(csv_string) } 
   end
 
   def self.update_added_emails
-    csv_text = File.read('public/lists/email_list.csv')
+    csv_text = File.read('db/lists/email_list.csv')
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
       email = row.to_hash.with_indifferent_access["Email address"]

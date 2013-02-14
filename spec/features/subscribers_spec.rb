@@ -27,7 +27,7 @@ feature 'Subscribers' do
 
     check 'overwrite'
     check 'headers'
-    attach_file 'importfile', File.expand_path('public/lists/email_list.csv')
+    attach_file 'importfile', File.expand_path('db/lists/email_list.csv')
 
     within '.PanelPlain' do
       click_on "Next »"
