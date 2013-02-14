@@ -10,7 +10,7 @@ gem 'csv_shaper'
 gem 'headless'
 gem 'capybara'
 gem 'rspec-rails', '~> 2.8.0'
-gem 'whenever', :require => false
+gem 'whenever'
 
 gem 'unicorn'
 gem 'capistrano-helpers'
