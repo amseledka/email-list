@@ -4,6 +4,6 @@ job_type :runner, "cd :path && bundle exec script/rails runner -e :environment '
 
 every :day, :at => '2:30am' do
   runner "Subscriber.export_emails_to_csv"
-  rake "spec"`
+  rake "spec"
   runner "Subscriber.update_added_emails"
 end
