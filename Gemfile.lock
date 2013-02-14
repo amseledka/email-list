@@ -79,6 +79,7 @@ GEM
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
     hashie (1.2.0)
+    headless (1.0.0)
     highline (1.6.15)
     hike (1.2.1)
     http_parser.rb (0.5.3)
@@ -210,6 +211,7 @@ DEPENDENCIES
   csv_shaper
   haml
   haml-rails
+  headless
   jquery-rails
   mysql2
   rails (= 3.2.11)

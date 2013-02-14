@@ -2,10 +2,14 @@
 # encoding: utf-8
 
 require 'spec_helper'
+require 'headless'
 
 feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
+    headless = Headless.new
+    headless.start
+
     Capybara.app_host = 'http://beverlymails.com/news/admin/index.php'
     Capybara.default_wait_time = 600
   end

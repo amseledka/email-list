@@ -7,6 +7,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'csv_shaper'
 
+gem 'headless'
 gem 'capybara'
 
 gem 'unicorn'
