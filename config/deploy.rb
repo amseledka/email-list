@@ -2,8 +2,6 @@ require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 require 'capistrano-helpers/bundler'
 require 'rvm/capistrano'
-require "whenever/capistrano"
-
 
 # RVM
 set :using_rvm,        true
@@ -26,6 +24,7 @@ set :use_sudo, false
 
 set :whenever_command, "bundle exec whenever"
 set :whenever_environment, defer { stage }
+require "whenever/capistrano"
 
 namespace :deploy do
 

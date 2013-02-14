@@ -1,4 +1,6 @@
 set :output, "log/cron_log.log"
+set :environment, 'development' 
+job_type :runner, "cd :path && bundle exec script/rails runner -e :environment ':task' :output"
 
 every :day, :at => '11:00pm' do
   runner "Subscriber.export_emails_to_csv"
