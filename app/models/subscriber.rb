@@ -5,7 +5,7 @@ class Subscriber < ActiveRecord::Base
 
   scope :not_added, where("added = false")
 
-  def self.export_emails
+  def self.export_emails_to_csv
     @subscribers = Subscriber.not_added
 
     csv_string = CsvShaper::Shaper.encode do |csv|
@@ -20,5 +20,15 @@ class Subscriber < ActiveRecord::Base
 
     file = "public/lists/email_list.csv"
     File.open(file, "w") { |file| file.write(csv_string) } 
+  end
+
+  def self.update_added_emails
+    csv_text = File.read('public/lists/email_list.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      email = row.to_hash.with_indifferent_access["Email address"]
+      subscriber = Subscriber.find_by_email(email)
+      subscriber.update_attributes(:added => true)
+    end
   end
 end
