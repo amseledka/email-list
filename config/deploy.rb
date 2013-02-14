@@ -2,6 +2,7 @@ require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 require 'capistrano-helpers/bundler'
 require 'rvm/capistrano'
+require "whenever/capistrano"
 
 
 # RVM
@@ -82,7 +83,6 @@ after "deploy:symlink_configs", "assets:precompile"
 after "assets:precompile", "assets:upload"
 after "assets:upload", "deploy:migrate"
 after "deploy:migrate", "assets:clean"
-require "whenever/capistrano"
 
 # View logs helper
 def watch_log(command)
