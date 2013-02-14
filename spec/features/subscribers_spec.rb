@@ -2,13 +2,6 @@
 # encoding: utf-8
 
 require 'spec_helper'
-if Capybara.current_driver == :selenium
-  require 'headless'
-
-  headless = Headless.new
-  headless.start
-end
-
 
 feature 'Subscribers' do
   background do
