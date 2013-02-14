@@ -25,7 +25,7 @@ default_run_options[:pty] = true
 set :use_sudo, false
 
 set :whenever_command, "bundle exec whenever"
-set :whenever_environment, "development"
+set :whenever_environment, defer { stage }
 
 namespace :deploy do
 
