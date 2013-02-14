@@ -15,8 +15,8 @@ set :scm,              :git
 set :repository,       'git@git.111min.com:the111minutes/email_lists.git'
 set :scm_passphrase,   ''
 
-set :stages,           ["production"]
-set :default_stage,    "production"
+set :stages,           ["development"]
+set :default_stage,    "development"
 set :deploy_via,       :remote_cache
 
 ssh_options[:forward_agent] = true
