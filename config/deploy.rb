@@ -2,7 +2,7 @@ require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 require 'capistrano-helpers/bundler'
 require 'rvm/capistrano'
-require "whenever/capistrano"
+
 
 # RVM
 set :using_rvm,        true
@@ -24,8 +24,7 @@ default_run_options[:pty] = true
 set :use_sudo, false
 
 set :whenever_command, "bundle exec whenever"
-set :whenever_environment, defer { stage }
-set :whenever_identifier, defer { "#{application}_#{stage}" }
+set :whenever_environment, "development"
 
 namespace :deploy do
 
@@ -83,7 +82,7 @@ after "deploy:symlink_configs", "assets:precompile"
 after "assets:precompile", "assets:upload"
 after "assets:upload", "deploy:migrate"
 after "deploy:migrate", "assets:clean"
-
+require "whenever/capistrano"
 
 # View logs helper
 def watch_log(command)
