@@ -22,7 +22,7 @@ ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 set :use_sudo, false
 
-set(:whenever_command) { "RAILS_ENV=#{rails_env} bundle exec whenever" }
+set(:whenever_command) { "sudo RAILS_ENV=#{rails_env} bundle exec whenever --user root" }
 set :whenever_environment, defer { stage }
 require "whenever/capistrano"
 
