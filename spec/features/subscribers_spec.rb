@@ -7,7 +7,7 @@ feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
     Capybara.app_host = 'http://beverlymails.com/news/admin/index.php'
-    Capybara.default_wait_time = 600
+    Capybara.default_wait_time = 1000
   end
 
   scenario 'Upload csv' do
@@ -17,9 +17,9 @@ feature 'Subscribers' do
     fill_in 'password', :with => '123456'
     click_on 'Login'
 
-    visit '?Page=Subscribers&Action=Import'
+    visit '?Page=Subscribers&Action=import'
 
-    find("option[value='1']").click
+    find("option[value='7']").click
 
     within '.PanelPlain' do
       click_on 'Next >>'

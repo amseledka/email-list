@@ -10,11 +10,11 @@ class Subscriber < ActiveRecord::Base
 
     csv_string = CsvShaper::Shaper.encode do |csv|
       csv.headers do |csv|
-        csv.columns :email, :first_name, :last_name, :lead_date, :ip, :url
-        csv.mappings :email => 'Email address', :lead_date => 'Lead date (yyyy/mm/dd)', :ip => 'Contacts ip address'
+        csv.columns :email, :first_name, :last_name, :ip
+        csv.mappings :email => 'Email address', :first_name => 'fname', :last_name => 'lname', :lead_date => 'Subscribe date (yyyy/mm/dd)', :ip => 'Contacts ip address'
       end
       csv.rows @subscribers do |csv, subscriber|
-        csv.cells :email, :first_name, :last_name, :lead_date, :ip, :url
+        csv.cells :email, :first_name, :last_name, :lead_date
       end
     end
 
