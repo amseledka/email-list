@@ -19,7 +19,7 @@ feature 'Subscribers' do
 
     visit '?Page=Subscribers&Action=import'
 
-    find("option[value='7']").click
+    find("option[value='55']").click
 
     within '.PanelPlain' do
       click_on 'Next >>'
