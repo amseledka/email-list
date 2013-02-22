@@ -5,11 +5,11 @@ job_type :runner, 'rvm use 1.9.3-p194@email_lists --create && cd :path && bundle
 job_type :rake, 'rvm use 1.9.3-p194@email_lists --create && cd :path && RAILS_ENV=:environment bundle exec rake :task --silent :output'
 
 
-every :day, :at => '02:55am' do
+every :day, :at => '11:00pm' do
   runner 'Subscriber.export_emails_to_csv'
   rake "spec"
 end
 
-every :day, :at => '03:05am' do
+every :day, :at => '11:10pm' do
   runner "Subscriber.update_added_emails"
 end
