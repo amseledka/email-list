@@ -1,5 +1,6 @@
 .bundle
 config/database.yml
+db/lists/*
 public/assets/*
 public/lists/*
 /log/*.log
