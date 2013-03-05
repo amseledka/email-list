@@ -10,6 +10,6 @@ every :day, :at => '11:00pm' do
   rake "spec"
 end
 
-every :day, :at => '11:10pm' do
-  runner "Subscriber.update_added_emails"
-end
+# every :day, :at => '11:10pm' do
+#   runner "Subscriber.update_added_emails"
+# end

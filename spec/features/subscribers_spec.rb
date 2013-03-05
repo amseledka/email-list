@@ -6,20 +6,20 @@ require 'spec_helper'
 feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
-    Capybara.app_host = 'http://beverlymails.com/news/admin/index.php'
-    Capybara.default_wait_time = 1000
+    Capybara.app_host = 'http://maileroo.com/iem/admin/index.php'
+    Capybara.default_wait_time = 3000
   end
 
   scenario 'Upload csv' do
     visit '/'
 
-    fill_in 'ss_username', :with => 'admin'
-    fill_in 'password', :with => '123456'
+    fill_in 'ss_username', :with => 'reg'
+    fill_in 'password', :with => 'ckone001'
     click_on 'Login'
 
     visit '?Page=Subscribers&Action=import'
 
-    find("option[value='55']").click
+    find("option[value='6']").click
 
     within '.PanelPlain' do
       click_on 'Next >>'
