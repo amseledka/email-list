@@ -1,6 +1,7 @@
 class SubscribersController < ApplicationController
   def index
-    @subscribers = Subscriber.all
+    @subscribers = Subscriber.not_added
+    @count = @subscribers.count
   end
 
   def url_parser
