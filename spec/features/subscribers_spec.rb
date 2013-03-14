@@ -9,7 +9,7 @@ feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
     Capybara.app_host = 'http://maileroo.com/iem/admin/index.php'
-    Capybara.default_wait_time = 3000
+    Capybara.default_wait_time = 10000
   end
 
   scenario 'Upload csv' do
@@ -55,9 +55,8 @@ feature 'Subscribers' do
     end
 
     click_on 'startImportSubscriber'
-    
-    
-    page.should have_content 'The contact import has been completed successfully'
+
+    wait_until{ page.has_content?('The contact import has been completed successfully') }
   end
 
 end
