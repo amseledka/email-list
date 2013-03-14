@@ -57,7 +57,6 @@ feature 'Subscribers' do
     click_on 'startImportSubscriber'
 
     sleep 2000.seconds
-    page.should have_content 'The contact import has been completed successfully'
   end
 
 end
