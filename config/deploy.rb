@@ -16,7 +16,7 @@ set :scm_passphrase,   ''
 
 set :stages,           ["development"]
 set :default_stage,    "development"
-set :deploy_via,       :remote_cache
+set :deploy_via,       :copy
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
