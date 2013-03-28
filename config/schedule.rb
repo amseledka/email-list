@@ -6,7 +6,7 @@ job_type :rake, 'rvm use 1.9.3-p194@email_lists --create && cd :path && RAILS_EN
 
 
 every :day, :at => '12:00pm' do
-  runner 'Subscriber.export_emails_to_csv'
+  rake 'emails:export_to_csv'
   rake "spec"
 end
 

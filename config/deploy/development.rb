@@ -6,7 +6,7 @@ set :unicorn_pid,       "#{deploy_to}/shared/pids/unicorn.pid"
 set :user,             'root'
 
 set :rails_env,         "development"
-set :branch,            "develop"
+set :branch,            "master"
 
 set :rvm_path,         '/opt/rvm'
 set :rvm_bin_path,     '/opt/rvm/bin'

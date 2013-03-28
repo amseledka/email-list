@@ -27,8 +27,9 @@ class Subscriber < ActiveRecord::Base
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
       email = row.to_hash.with_indifferent_access["Email address"]
-      subscriber = Subscriber.find_by_email(email)
-      subscriber.update_attributes(:added => true)
+      Subscriber.where(:email => email).each do |s|
+        s.update_attributes(:added => true)
+      end
     end
   end
 end
