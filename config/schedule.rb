@@ -9,7 +9,7 @@ every :day, :at => '12:00pm' do
   rake 'emails:export_to_csv'
 end
 
-every :day :at => '12:15pm' do
+every :day, :at => '12:15pm' do
   rake "spec"
 end
 
