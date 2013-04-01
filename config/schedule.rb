@@ -7,9 +7,12 @@ job_type :rake, 'rvm use 1.9.3-p194@email_lists --create && cd :path && RAILS_EN
 
 every :day, :at => '12:00pm' do
   rake 'emails:export_to_csv'
+end
+
+every :day :at => '12:15pm' do
   rake "spec"
 end
 
-# every :day, :at => '12:40pm' do
-#   runner "Subscriber.update_added_emails"
-# end
+every :day, :at => '12:40pm' do
+  rake "emails:update_added"
+end
