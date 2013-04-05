@@ -23,7 +23,8 @@ feature 'Subscribers' do
 
     @list_name = Time.now.strftime("Reg %b%d/%Y")
     fill_in 'Name', :with => @list_name
-    fill_in 'OwnerName', :with => 'Admin'
+    fill_in 'OwnerName', :with => '{Attention|Interesting|Friendly|Personal|Exclusive|Special} {Notice|Alert|Reminder|Status|Notification|Update}'
+    uncheck 'NotifyOwner'
 
     within '.PanelPlain' do
       click_on 'Save'
