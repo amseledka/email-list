@@ -8,7 +8,7 @@ require 'spec_helper'
 feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
-    Capybara.app_host = 'http://maileroo.com/iem/admin/index.php'
+    Capybara.app_host = 'http://starkmail.biz/iem/admin/index.php'
     Capybara.default_wait_time = 5000
   end
 
