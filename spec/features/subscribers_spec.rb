@@ -23,7 +23,7 @@ feature 'Subscribers' do
 
     @list_name = Time.now.strftime("Reg %b%d/%Y")
     fill_in 'Name', :with => @list_name
-    fill_in 'OwnerName', :with => '{Attention|Interesting|Friendly|Personal|Exclusive|Special} {Notice|Alert|Reminder|Status|Notification|Update}'
+    fill_in 'OwnerName', :with => '{Interesting|Friendly|Personal|Exclusive|Special} {Notice|Alert|Reminder|Status|Notification|Update}'
     fill_in 'OwnerEmail', :with => 'news@cloudoffers.in'
     fill_in 'ReplyToEmail', :with => 'news@cloudoffers.in'
     fill_in 'BounceEmail', :with => 'bounce@cloudoffers.in'
