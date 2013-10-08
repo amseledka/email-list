@@ -1,1 +1,4 @@
-Please don't judge me. You could end up in the same situation...
+Simple cron task that runs server script to export data to .csv file and imitate manual upload of this .csv file to other server. And very simple and small API to receive and save data
+
+The only acceptable solution to make imitatation of manual file upload was using RSpec. 
+So that's why, unfortunatelly, I was using RSpec not for test purpose. I fully understand that this is wrong, but job must have been done.

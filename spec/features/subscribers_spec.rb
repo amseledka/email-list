@@ -8,25 +8,23 @@ require 'spec_helper'
 feature 'Subscribers' do
   background do
     Capybara.current_driver = :selenium
-    Capybara.app_host = 'http://starkmail.biz/iem/admin/index.php'
+    Capybara.app_host = 'http://test.emailadminwebsite'
     Capybara.default_wait_time = 5000
   end
 
   scenario 'Upload csv' do
     visit '/'
 
-    fill_in 'ss_username', :with => 'reg'
-    fill_in 'password', :with => 'ckone001'
+    fill_in 'ss_username', :with => 'username'
+    fill_in 'password', :with => 'password'
     click_on 'Login'
 
     visit '?Page=lists&Action=create'
 
-    @list_name = Time.now.strftime("Reg %b%d/%Y")
+    @list_name = Time.now.strftime("List from %b%d/%Y")
     fill_in 'Name', :with => @list_name
     fill_in 'OwnerName', :with => '{Interesting|Friendly|Personal|Exclusive|Special} {Notice|Alert|Reminder|Status|Notification|Update}'
-    fill_in 'OwnerEmail', :with => 'news@cloudoffers.in'
-    fill_in 'ReplyToEmail', :with => 'news@cloudoffers.in'
-    fill_in 'BounceEmail', :with => 'bounce@cloudoffers.in'
+    fill_in 'OwnerEmail', :with => ''
     uncheck 'NotifyOwner'
 
     within '.PanelPlain' do
